@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Nos services</title>
+    <link rel="icon" href="logo-ndd.svg" type="image/x-icon">
+    <link rel="stylesheet" href="debono-services.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap"
+        rel="stylesheet">
+
+    <script src="debono-popup.js" defer></script>
+    <script src="debono-menu.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!-- Menu -->
+            <div class="menu-principal1">
+                <div class="logo">
+                    <a href="ndd-accueil.html">
+                        <img src="logo-ndd.svg" alt="logo de NDD">
+                </div>
+                <div class="menu-items">
+                    <a href="ndd-accueil.html">ACCUEIL</a>
+                    <a href="ndd-services.html">NOS SERVICES</a>
+                    <a href="ndd-contact.html">NOUS CONTACTER</a>
+                </div>
+                <!-- Icône de menu pour les petits écrans -->
+                <div class="menu-icon">
+                    <button id="icon">☰</button>
+                    <!-- Liste de navigation -->
+                    <div class="liste">
+                        <a href="ndd-accueil.html">ACCUEIL</a>
+                        <a href="ndd-services.html">NOS SERVICES</a>
+                        <a href="ndd-contact.html">NOUS CONTACTER</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/qPXGVuwbklA?si=daGLU6SrQeM1CaPJ"
+                title="NDD Youtube Vidéo"></iframe>
+        </div>
+    </main>
+    <footer id="footer">
+        <a href="#" id="conditions-link">Mentions légales</a>
+
+        <!-- Structure de la pop-up (initialement cachée) -->
+        <div id="popup" style="display: none;">
+            <!-- Contenu de la pop-up -->
+            <p>
+                Société NDD <br>
+                Enzo Debono <br>
+                28 rue Santos Dumont, 69008 Lyon
+                <br>
+                ndd.informations@gmail.com<br>
+                06.50.41.06.01<br>
+                <br>
+                Entreprise Individuelle
+                <br>
+                N° SIRET : 83987027600012<br>
+            </p>
+            <!-- Bouton pour fermer la pop-up -->
+            <a href="#" id="close-button">Fermer</a>
+        </div>
+    </footer>
+</body>
