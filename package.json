@@ -3,6 +3,6 @@
     "serve": "^14.2.3"
   },
   "scripts": {
-    "start": "serve . -p 80"
+    "start": "serve ."
   }
 }
