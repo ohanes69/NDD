@@ -166,8 +166,8 @@ footer a {
 }
 
 video {
-    width: 45rem;
-    height: 30rem;
+    /* width: 45rem;
+    height: 30rem; */
     border-radius: 15px;
     box-shadow: 0 1px 10px #6b6a6a;
     display: flex;
