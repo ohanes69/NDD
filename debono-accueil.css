@@ -166,13 +166,15 @@ footer a {
 }
 
 video {
-    /* width: 45rem;
-    height: 30rem; */
+    /* width: 45rem; */
+    /* height: 25rem; */
+    width: 700px;
+    height: 500px;
     border-radius: 15px;
     box-shadow: 0 1px 10px #6b6a6a;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
 
 .video {
