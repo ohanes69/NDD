@@ -51,7 +51,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
         let body = `${formMessage}`;
 
         // Créer le lien mailto
-        let mailtoLink = `mailto:myparrainage@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        let mailtoLink = `mailto:ndd.informations@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
         // Ouvrir le client mail avec le lien mailto
         window.location.href = mailtoLink;
