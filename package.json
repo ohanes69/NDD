@@ -1,8 +1,29 @@
 {
   "dependencies": {
+    "daisyui": "^4.12.23",
     "serve": "^14.2.3"
   },
   "scripts": {
-    "start": "serve ."
-  }
+    "build:css": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch"
+  },
+  "name": "ndd",
+  "version": "1.0.0",
+  "main": "debono-formulaire.js",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ohanes69/NDD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ohanes69/NDD/issues"
+  },
+  "homepage": "https://github.com/ohanes69/NDD#readme",
+  "description": ""
 }

@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="utf-8">
     <title>Nettoyage, Débarras et Dératisation à Lyon et ses alentours</title>
     <link rel="icon" href="./logo-ndd.svg" type="image/x-icon">
-    <link rel="stylesheet" href="debono-accueil.css">
     <meta name="google-site-verification" content="pXb945fskXMUpT1upjPhvpHmVK_UrgnbJcxf2Sey26M" />
     <link rel="canonical" href="https://www.nettoyage-debarras-deratisation.com/index.html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="NDD - Nettoyage Débarras Dératisation">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap"
-        rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap"
-        rel="stylesheet">
-
-    <script src="debono-popup.js" defer></script>
+    <link href="./dist/styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- <link rel="canonical" href="https://monsite.com/page" /> -->
     <script src="debono-menu.js" defer></script>
 </head>
-
 <body>
-    <header>
-        <nav>
-            <!-- Menu -->
-            <div class="menu-principal1">
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="logo-ndd.svg" alt="logo de NDD">
-                </div>
-                <div class="menu-items">
-                    <a href="index.html">ACCUEIL</a>
-                    <a href="ndd-contact.html">NOUS CONTACTER</a>
-                </div>
-                <!-- Icône de menu pour les petits écrans -->
-                <div class="menu-icon">
-                    <button id="icon">☰</button>
-                    <!-- Liste de navigation -->
-                    <div class="liste">
-                        <a href="index.html">ACCUEIL</a>
-                        <a href="ndd-contact.html">NOUS CONTACTER</a>
-                    </div>
-                </div>
+    <header class="bg-gray-50 border-b border-gray-300 py-3 sm:py-0 relative">
+        <nav class="font-sans font-medium text-base flex items-center justify-between px-4 sm:px-6">
+            <!-- Logo -->
+            <a href="index.html">
+                <img src="logo-ndd.svg" alt="logo-NDD" 
+                    class="h-10 sm:h-12 w-auto cursor-pointer">
+            </a>
+            <!-- Hamburger Icon -->
+            <button id="menu-toggle" class="block text-gray-700 hover:text-black sm:hidden p-2 focus:outline-none cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
+            </svg>
+            </button>
+            <!-- Menu desktop -->
+            <div class="hidden sm:flex items-center my-7">
+                <a href="./index.html" class="mr-10 text-red-600 cursor-pointer">Accueil</a>
+                <a href="./ndd-contact.html" class="mr-4 hover:text-red-600 text-gray-700 cursor-pointer">Contact</a>
             </div>
         </nav>
+        <!-- Mobile Sliding Menu -->
+<div id="mobile-menu" class="fixed top-0 left-0 w-3/4 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out sm:hidden z-50">
+        <div class="flex justify-between items-center p-4 border-b">
+            <a href="index.html">
+                <img src="logo-ndd.svg" alt="logo-NDD"  
+                    class="h-10 sm:h-12 w-auto">
+            </a>
+                <button id="menu-close" class="text-gray-700 hover:text-black focus:outline-none cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+        </div>
+    <nav class="flex flex-col space-y-3 p-4">
+        <a href="./index.html" class="block border-b border-gray-200 pb-3 font-sans font-medium text-base text-red-600 cursor-pointer">Accueil</a>
+        <a href="./ndd-contact.html" class="block border-b border-gray-200 pb-3 font-sans font-medium text-base text-gray-700 hover:text-red-600 cursor-pointer">Contact</a>
+        <a href="./mentionslegales.html" class="block border-b border-gray-200 pb-3 font-sans font-medium text-base text-gray-700 hover:text-red-600 cursor-pointer">Mentions légales</a>
+    </nav>
+</div>
     </header>
     <main>
         <div class="main-text">
             <p>
-                <span>NDD </span>est une entreprise spécialisée dans le débarras, le nettoyage et la
+                <span>NDD</span>est une entreprise spécialisée dans le débarras, le nettoyage et la
                 dératisation, offrant des services professionnels et personnalisés pour répondre à vos
                 besoins spécifiques.
             </p>
@@ -114,27 +116,11 @@
             </div>
         </div>
     </main>
-
-    <footer id="footer">
-        <a href="#" id="conditions-link">Mentions légales</a>
-
-        <!-- Structure de la pop-up (initialement cachée) -->
-        <div id="popup" style="display: none;">
-            <!-- Contenu de la pop-up -->
-            <p>
-                Société NDD <br>
-                Enzo Debono <br>
-                28 rue Santos Dumont, 69008 Lyon<br>
-                ndd.informations@gmail.com<br>
-                06.50.41.06.01<br>
-                <br>
-                Entreprise Individuelle <br>
-                N° SIRET : 83987027600012<br>
-            </p>
-            <!-- Bouton pour fermer la pop-up -->
-            <a href="#" id="close-button">Fermer</a>
+    <footer class="flex py-6 sm:p-8 flex-col items-center">
+        <div id="legal-links" class="hidden sm:flex items-center justify-center space-x-4">
+            <a class="text-md text-red-600 border-r-2 border-gray-300 pr-4">© NDD</a>
+            <a href="./mentionslegales.html" class="text-md text-red-600">Mentions légales</a>
         </div>
-    </footer>
 </body>
 
 </html>

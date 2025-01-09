@@ -1,58 +1,59 @@
-document.getElementById("boutonEnvoyer").addEventListener("click", function (event) {
-    // Empêcher le formulaire de se soumettre
+document.querySelector("form").addEventListener("submit", (event) => {
     event.preventDefault();
 
-    // Récupérer les valeurs des champs
-    var prenom = document.getElementById("prenom").value;
-    var nom = document.getElementById("nom").value;
-    var email = document.getElementById("email").value;
+    let formFirstName = document.getElementById("first-name").value.trim();
+    let formLastName = document.getElementById("last-name").value.trim();
+    let formEmail = document.getElementById("email").value.trim();
+    let formPhone = document.getElementById("phone").value.trim();
+    let formMessage = document.getElementById("message").value.trim();
 
-    // Afficher les valeurs dans la console
-    console.log("Prénom : " + prenom);
-    console.log("Nom : " + nom);
-    console.log("Email : " + email);
+    let firstNameRegex = /^[a-zA-ZÀ-ÿ' -]+$/;
+    let lastNameRegex = /^[a-zA-ZÀ-ÿ', -]+$/;
+    let phoneRegex = /^\+?[0-9 ]{9,20}$/;
+    let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/;
 
-    // Vous pouvez utiliser ces valeurs comme bon vous semble, par exemple les envoyer à un serveur via une requête AJAX
+    document.getElementById("first-name-error").classList.add("hidden");
+    document.getElementById("last-name-error").classList.add("hidden");
+    document.getElementById("email-error").classList.add("hidden");
+    document.getElementById("phone-error").classList.add("hidden");
+    document.getElementById("message-error").classList.add("hidden");
 
-    // Vérifier si les champs prénom et nom ont au moins deux caractères
-    if (prenom.length < 2 || nom.length < 2) {
-        document.getElementById("prenomError").textContent = "Veuillez entrer un prénom valide.";
-        document.getElementById("nomError").textContent = "Veuillez entrer un nom valide.";
-        return; // Arrêtez l'exécution de la fonction si la condition n'est pas remplie
-    } else {
-        // Si les champs sont valides, effacez les messages d'erreur
-        document.getElementById("prenomError").textContent = "";
-        document.getElementById("nomError").textContent = "";
+    let isValid = true;
+    if (formFirstName.length < 2 || !firstNameRegex.test(formFirstName))
+    {
+        document.getElementById("first-name-error").classList.remove("hidden");
+        isValid = false;
     }
+    if (formLastName.length < 2 || !lastNameRegex.test(formLastName))
+    {
+        document.getElementById("last-name-error").classList.remove("hidden");
+        isValid = false;
 
-    // Vérifier si des chiffres sont présents dans les champs prénom et nom
-    if (/[\d]/.test(prenom) || /[\d]/.test(nom)) {
-        document.getElementById("prenomError").textContent = "Le prénom ne doit pas contenir de chiffres.";
-        document.getElementById("nomError").textContent = "Le nom ne doit pas contenir de chiffres.";
-        return; // Arrêter l'exécution de la fonction si la condition n'est pas remplie
-    } else {
-        // Si les champs sont valides, effacez les messages d'erreur
-        document.getElementById("prenomError").textContent = "";
-        document.getElementById("nomError").textContent = "";
     }
-
-    // Vérifier si l'email est valide
-    if (!/^[A-Za-z0-9._-]+@[A-Za-z0-9._-]+\.[A-Za-z]{2,}$/.test(email)) {
-        document.getElementById("emailError").textContent = "Veuillez entrer une adresse e-mail valide.";
-        return; // Arrêter l'exécution de la fonction si l'email n'est pas valide
-    } else {
-        // Si les champs sont valides, effacez les messages d'erreur
-        document.getElementById("emailError").textContent = "";
+    if (!emailRegex.test(formEmail))
+    {
+        document.getElementById("email-error").classList.remove("hidden");
+        isValid = false;
     }
+    if (!phoneRegex.test(formPhone))
+    {
+        document.getElementById("phone-error").classList.remove("hidden");
+        isValid = false;
+    }
+    if (formMessage.length < 1)
+    {
+        document.getElementById("message-error").classList.remove("hidden");
+        isValid = false;
+    }
+    if (isValid)
+    {
+        let subject = `Message de ${formFirstName} ${formLastName}`;
+        let body = `${formMessage}`;
 
-    // Réinitialiser les valeurs des champs du formulaire
-    document.getElementById("prenom").value = "";
-    document.getElementById("nom").value = "";
-    document.getElementById("email").value = "";
+        // Créer le lien mailto
+        let mailtoLink = `mailto:myparrainage@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    // Créer l'URL mailto avec le sujet
-    var urlMailto = "mailto:ndd.informations@gmail.com";
-
-    // Ouvrir le client de messagerie par défaut avec l'URL mailto
-    window.location.href = urlMailto;
-});
+        // Ouvrir le client mail avec le lien mailto
+        window.location.href = mailtoLink;
+    }
+})

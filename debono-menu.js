@@ -1,14 +1,14 @@
-let menuBouton = document.getElementById("icon");
-let menu = document.querySelector(".liste");
+const menuToggle = document.getElementById("menu-toggle");
+const mobileMenu = document.getElementById("mobile-menu");
+const menuClose = document.getElementById("menu-close");
 
-menuBouton.addEventListener("click", function () {
-    // Vérifie si la liste est actuellement visible
-    if (menu.style.display === "block") {
-        // Si c'est le cas, la rend invisible
-        menu.style.display = "none";
-    } else {
-        // Sinon, la rend visible
-        menu.style.display = "block";
-    }
+// Ouvrir le menu
+menuToggle.addEventListener("click", () => {
+  mobileMenu.classList.remove("-translate-x-full");
+});
+
+// Fermer le menu
+menuClose.addEventListener("click", () => {
+  mobileMenu.classList.add("-translate-x-full");
 });
 
